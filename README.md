@@ -15,6 +15,9 @@ This project provides a complete database schema for a retail business that oper
 - **Supplier Management**: Keep supplier contact information and relationships
 - **Performance Optimized**: Includes indexes for fast query execution
 - **Data Integrity**: Built-in constraints and relationships to maintain data quality
+- **Reporting Views**: Pre-built views for sales analytics and inventory alerts
+- **Audit Logging**: Track inventory changes with automatic logging
+- **Automated Triggers**: Database triggers for business logic automation
 
 ## Project Structure
 
@@ -22,8 +25,11 @@ This project provides a complete database schema for a retail business that oper
 ├── schema.sql          # Database schema with 10 core tables
 ├── seed.sql            # Sample data for testing and development
 ├── indexes.sql         # Performance indexes for common queries
-├── test-queries.sql    # Example queries for testing the system
-└── README.md           # This file
+├── queries.sql         # Useful database views for reporting
+├── audit_log.sql      # Audit logging for inventory changes
+├── triggers.sql       # Database triggers for automated actions
+├── test-queries.sql   # Example queries for testing the system
+└── README.md          # This file
 ```
 
 ## Database Schema
@@ -77,7 +83,22 @@ This project provides a complete database schema for a retail business that oper
    psql -d retail_inventory -f indexes.sql
    ```
 
-5. **Test the Setup**
+5. **Create Views**
+   ```bash
+   psql -d retail_inventory -f queries.sql
+   ```
+
+6. **Set Up Audit Logging**
+   ```bash
+   psql -d retail_inventory -f audit_log.sql
+   ```
+
+7. **Create Triggers**
+   ```bash
+   psql -d retail_inventory -f triggers.sql
+   ```
+
+8. **Test the Setup**
    ```bash
    psql -d retail_inventory -f test-queries.sql
    ```
